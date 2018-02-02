@@ -1,0 +1,35 @@
+CREATE TABLE hantverkare (
+	email VARCHAR(64) PRIMARY KEY,
+	name VARCHAR(128) NOT NULL,
+	phone NUMERIC,
+	password VARCHAR(64) NOT NULL,
+	presentation VARCHAR(256),
+	antalAnstallda NUMERIC NOT NULL,
+)
+
+
+
+/*
+CREATE TABLE projekt (
+	hantverkare VARCHAR(128) REFERENCES person(email) ON UPDATE CASCADE ON DELETE CASCADE,
+	client VARCHAR(128) REFERENCES person(email) ON UPDATE CASCADE ON DELETE CASCADE,
+	proejktID NUMERIC PRIMARY KEY,
+
+)
+
+CREATE TABLE avslutadeProjekt (
+	startDate TIMESTAMP,
+	slutDate TIMESTAMP,
+	proejktID NUMERIC PRIMARY KEY,
+	client VARCHAR(128) REFERENCES user(email) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY(proejktID,client) REFERENCES bid(proejktID,client) ON UPDATE CASCADE ON DELETE CASCADE
+
+)
+
+CREATE TABLE user (
+	email VARCHAR(128) PRIMARY KEY,
+	username VARCHAR(128) NOT NULL,
+	isHantverkare BOOLEAN NOT NULL,
+
+)
+*/
