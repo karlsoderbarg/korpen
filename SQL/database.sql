@@ -5,6 +5,7 @@ CREATE TABLE hantverkare (
 	password VARCHAR(64) NOT NULL,
 	presentation VARCHAR(256),
 	antalAnstallda NUMERIC NOT NULL,
+	is_admin BOOLEAN NOT NULL DEFAULT FALSE
 )
 
 

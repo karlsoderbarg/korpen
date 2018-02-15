@@ -14,6 +14,6 @@ for i in range(100):
 	k = str(i)
 	phone = random.randint(1000000000,9999999999)
 	password = hash_func("pass"+k)
-	query = query + "INSERT INTO "+table+" VALUES('user"+k+"@gmail.com', 'user"+k+"', "+str(phone)+", '"+password+"', 'Benkes bygg är en snickare fran Roslagen', 2);\n"
+	query = query + "INSERT INTO "+table+" VALUES('user"+k+"@gmail.com', 'user"+k+"', "+str(phone)+", '"+password+"', 'Benkes bygg är en snickare fran Roslagen', 2, FALSE);\n"
 
 f.write(query)
