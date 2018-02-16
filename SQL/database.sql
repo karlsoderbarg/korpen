@@ -5,8 +5,33 @@ CREATE TABLE hantverkare (
 	password VARCHAR(64) NOT NULL,
 	presentation VARCHAR(256),
 	antalAnstallda NUMERIC NOT NULL,
-	is_admin BOOLEAN NOT NULL DEFAULT FALSE
-)
+	is_admin BOOLEAN NOT NULL DEFAULT FALSE,
+	ratingSum NUMERIC,
+	antalRatings NUMERIC
+);
+
+CREATE TABLE snickare (
+	email VARCHAR(128) PRIMARY KEY,
+	FOREIGN KEY(email) REFERENCES hantverkare(email) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE barber (
+	email VARCHAR(128) PRIMARY KEY,
+	FOREIGN KEY(email) REFERENCES hantverkare(email) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE arborist (
+	email VARCHAR(128) PRIMARY KEY,
+	FOREIGN KEY(email) REFERENCES hantverkare(email) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE gardener (
+	email VARCHAR(128) PRIMARY KEY,
+	FOREIGN KEY(email) REFERENCES hantverkare(email) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+/* RATING måste vara ett annat bord som relaterar till en hantverkares mail och kunders betyg.
+/* Lägg till profession som snickare:barber:arborist et cetera...
+
+*/
 
 
 
