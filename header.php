@@ -18,7 +18,7 @@
       <a class="navbar-brand" href="index.php">Hantverk</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="ride.php">Lokala Hantverkare</a></li>
+      <li><a href="hantverkarLista.php">Lokala Hantverkare</a></li>
       <li><a href="bids.php">My Bids</a></li>
       <li><a href="offerRide.php">Offer Rides</a></li>
       <li><a href="offeredRides.php">Offered Rides</a></li>

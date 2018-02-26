@@ -6,8 +6,8 @@ CREATE TABLE hantverkare (
 	presentation VARCHAR(256),
 	antalAnstallda NUMERIC NOT NULL,
 	is_admin BOOLEAN NOT NULL DEFAULT FALSE,
-	ratingSum NUMERIC,
-	antalRatings NUMERIC
+	ratingSum NUMERIC DEFAULT 0,
+	antalRatings NUMERIC DEFAULT 0
 );
 
 CREATE TABLE snickare (
@@ -28,8 +28,28 @@ CREATE TABLE gardener (
 );
 
 
+CREATE TABLE region (
+	name VARCHAR(256) PRIMARY KEY
+);
+
+CREATE TABLE operatingRegion (
+	hantverkare VARCHAR(128) REFERENCES hantverkare(email) ON UPDATE CASCADE ON DELETE CASCADE,
+	region VARCHAR(256) REFERENCES region(name) ON UPDATE CASCADE ON DELETE CASCADE,
+	PRIMARY KEY(hantverkare,region),
+	UNIQUE(hantverkare,region)
+);
+
+
+
 /* RATING måste vara ett annat bord som relaterar till en hantverkares mail och kunders betyg.
 /* Lägg till profession som snickare:barber:arborist et cetera...
+
+
+HUR SKA VI GÖRA MED STAD/PLATS/ verksamhetsområde?
+Mata in en lista med alla sveriges landskap?
+Kommuner? tätorter? Lanskap blir för stort antar jag.
+
+Till en början kan de få specificera lite mer i sin egna 'presentation'.
 
 */
 
